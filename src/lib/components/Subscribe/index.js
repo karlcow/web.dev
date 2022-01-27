@@ -78,6 +78,7 @@ class Subscribe extends BaseElement {
     this.checkboxes.forEach((checkbox) =>
       form.set(checkbox, doubleOptIn ? 'Unconfirmed' : 'True'),
     );
+    form.delete('g-recaptcha-response');
     return form;
   }
 

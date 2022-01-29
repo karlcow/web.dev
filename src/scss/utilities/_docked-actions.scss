@@ -2,4 +2,9 @@
 .docked-actions {
   position: fixed;
   inset: auto $global-gutter $global-gutter auto;
+
+  .fab[data-docked] {
+    bottom: auto;
+    position: relative;
+  }
 }

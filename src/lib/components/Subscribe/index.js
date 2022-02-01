@@ -45,6 +45,9 @@ class Subscribe extends BaseElement {
     if (!this.submissionUrl) {
       console.warn(`No submission URL found for subscribe element.`);
     }
+    // Prevent `form.submit()` from being called as it bypasses the event listener
+    this.form.submit = () =>
+      this.onError(new Error('Please fill out the form'));
     this.form.addEventListener('submit', this.onSubmit);
   }
 

@@ -1,10 +1,7 @@
 /// Docks share/subscribe actions to the block end and inline end
 .docked-actions {
-  position: fixed;
   inset: auto $global-gutter $global-gutter auto;
-
-  .fab[data-docked] {
-    bottom: auto;
-    position: relative;
-  }
+  position: fixed;
+  text-align: end;
+  z-index: 1;
 }

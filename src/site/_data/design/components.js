@@ -5,9 +5,13 @@ const nunjucks = require('nunjucks');
 const fs = require('fs');
 const path = require('path');
 const prettier = require('prettier');
+const createNJKExtension = require('../../../../tools/njk/extension');
 
 // Pull in filters
 const md = require('../../_filters/md');
+
+// Components
+const Author = require('../../_includes/components/Author');
 
 // Set up the chalk warning and error state
 // @ts-ignore
@@ -23,6 +27,7 @@ const nunjucksEnv = new nunjucks.Environment(
   {autoescape: false},
 );
 
+nunjucksEnv.addExtension('Author', createNJKExtension('Author', Author));
 nunjucksEnv.addFilter('md', md);
 
 // For storing processed items for speedier builds

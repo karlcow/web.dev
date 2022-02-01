@@ -1,28 +1,20 @@
 {
   "title": "Multiple Authors",
   "context": {
-    "items": [
+    "authors": [
       {
-        "url": "#",
-        "name": "Collin Dion Agata",
-        "image": "image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/ZpE2N6yjkaqQNcSiaxvR.jpeg",
-        "links": [
-          {
-            "text": "Twitter",
-            "url": "https://twitter.com/CollinDion"
-          }
-        ]
+        "title": "i18n.authors.jakearchibald.title",
+        "description": "i18n.authors.jakearchibald.description",
+        "image": "image/admin/Cprm03kLbFXkxbzGLI6x.jpg",
+        "href": "/authors/jakearchibald/",
+        "twitter": "jaffathecake"
       },
       {
-        "url": "#",
-        "name": "Collin Dion Agata",
-        "image": "image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/ZpE2N6yjkaqQNcSiaxvR.jpeg",
-        "links": [
-          {
-            "text": "Twitter",
-            "url": "https://twitter.com/CollinDion"
-          }
-        ]
+        "title": "i18n.authors.adamargyle.title",
+        "description": "i18n.authors.adamargyle.description",
+        "image": "image/admin/jdQIxAJrGuFOtwmuDfIn.jpg",
+        "href": "/authors/adamargyle/",
+        "twitter": "argyleink"
       }
     ]
   }

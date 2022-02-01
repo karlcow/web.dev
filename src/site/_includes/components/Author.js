@@ -17,12 +17,19 @@
 const {html} = require('common-tags');
 const {Img} = require('./Img');
 const {i18n} = require('../../_filters/i18n');
+const {defaultLocale} = require('../../_data/site');
 
 /**
- * @param {{id: string, author: AuthorsItem, locale: string, showSocialMedia?: boolean}} param0
+ * @param {{id?: string, author: AuthorsItem, locale: string, showSocialMedia?: boolean, showDescription?: boolean}} param0
  * @returns {string}
  */
-function Author({id, author, locale, showSocialMedia = false}) {
+function Author({
+  id,
+  author,
+  locale = defaultLocale,
+  showSocialMedia = false,
+  showDescription = false,
+}) {
   if (!author) {
     console.log(
       `Can't create Author component for "${id}" without author ` +
@@ -39,6 +46,8 @@ function Author({id, author, locale, showSocialMedia = false}) {
         `author has a title.`,
     );
   }
+
+  const description = i18n(author.description, locale);
 
   const img = Img({
     src: author.image,
@@ -59,6 +68,7 @@ function Author({id, author, locale, showSocialMedia = false}) {
         <cite class="author__name">
           <a href="${author.href}">${title}</a>
         </cite>
+        ${showDescription && html`<p class="author__bio">${description}</p>`}
         ${showSocialMedia &&
         html` <div class="author__links cluster">
           ${author.twitter &&

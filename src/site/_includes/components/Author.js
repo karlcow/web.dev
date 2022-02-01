@@ -20,7 +20,7 @@ const {i18n} = require('../../_filters/i18n');
 const {defaultLocale} = require('../../_data/site');
 
 /**
- * @param {{id?: string, author: AuthorsItem, locale: string, showSocialMedia?: boolean, showDescription?: boolean}} param0
+ * @param {AuthorParam} param0
  * @returns {string}
  */
 function Author({
@@ -47,8 +47,6 @@ function Author({
     );
   }
 
-  const description = i18n(author.description, locale);
-
   const img = Img({
     src: author.image,
     alt: title,
@@ -68,7 +66,8 @@ function Author({
         <cite class="author__name">
           <a href="${author.href}">${title}</a>
         </cite>
-        ${showDescription && html`<p class="author__bio">${description}</p>`}
+        ${showDescription &&
+        html`<p class="author__bio">${i18n(author.description, locale)}</p>`}
         ${showSocialMedia &&
         html` <div class="author__links cluster">
           ${author.twitter &&

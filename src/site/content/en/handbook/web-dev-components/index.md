@@ -17,6 +17,7 @@ provides guidance about how to use them effectively.
 ## Component types
 
 1. [Asides](#asides)
+1. [Author](#author)
 1. [Banners](#banners)
 1. [Block quotes](#block-quotes)
 1. [Browser Compatibility](#browsercompat)
@@ -160,6 +161,56 @@ Use the codelab aside to link to an associated codelab.
 {% Aside 'codelab' %}
   [Using Imagemin with Grunt](#)
 {% endAside %}
+
+## Author
+
+An Author shortcode exists that is able to generate HTML such as set forth in the [design system](/design-system/component/authors/).
+
+It an be used as such:
+
+```text
+{% raw %}
+{% Author
+  {
+    author: {
+      title: 'i18n.authors.jakearchibald.title',
+      description:'i18n.authors.jakearchibald.description',
+      image: 'image/admin/Cprm03kLbFXkxbzGLI6x.jpg',
+      href: '/authors/jakearchibald/',
+      twitter: 'jaffathecake'
+    },
+    showSocialMedia: true,
+    showDescription: true,
+    locale: 'en'
+  }
+%}
+{% endraw %}
+```
+
+And generates the following:
+
+{% Author
+  {
+    author: {
+      title: 'i18n.authors.jakearchibald.title',
+      description:'i18n.authors.jakearchibald.description',
+      image: 'image/admin/Cprm03kLbFXkxbzGLI6x.jpg',
+      href: '/authors/jakearchibald/',
+      twitter: 'jaffathecake'
+    },
+    showSocialMedia: true,
+    showDescription: true,
+    locale: 'en'
+  }
+%}
+
+### Author argument
+
+A break down of all the argument the shortcode accepts can be found here.
+
+```typescript
+{% include '../../../../../../types/site/_includes/components/Author.d.ts' %}
+```
 
 ## Banners
 
